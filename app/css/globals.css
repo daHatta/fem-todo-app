@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors*/
+  --clr-brightBlue: hsl(220, 98%, 61%);
+  --clr-checkStart: hsl(192, 100%, 67%); 
+  --clr-checkEnd: hsl(280, 87%, 65%);
+
+  /* Colors for Light Theme */
+  --clr-lt-lightGray: hsl(0, 0%, 98%);
+  --clr-lt-veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --clr-lt-lightGrayishBlue: hsl(233, 11%, 84%);
+  --clr-lt-darkGrayishBlue: hsl(236, 9%, 61%);
+  --clr-lt-veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  /* Colors for Dark Theme */
+  --clr-dt-veryDarkBlue: hsl(235, 21%, 11%);
+  --clr-dt-veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --clr-dt-lightGrayishBlue: hsl(234, 39%, 85%);
+  --clr-dt-lightGrayishBlue-hover: hsl(236, 33%, 92%);
+  --clr-dt-darkGrayishBlue: hsl(234, 11%, 52%);
+  --clr-dt-veryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --clr-dt-veryDarkGrayishBlue-l2: hsl(237, 14%, 26%);
+
+  /* Typo */
+  --fs-400: 1rem;     /* 16px */
+  --fs-500: 1.125rem; /* 18px */
+  --fs-600: 1.25rem;  /* 20px */
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  /* Typo Usage */
+  --fs-body: var(--fs-500);
+
+  --fw-regular: var(--fw-400);
+  --fw-bold: var(--fw-700);
+
+}
+
+[data-theme="light"] {
+  --background-body: var(--clr-lt-veryLightGrayishBlue);
+  --color-body: var(--clr-lt-darkGrayishBlue);
+  --color-h1: var(--clr-lt-lightGray);
+}
+
+[data-theme="light"] body {
+  background-image: url("../images/bg-mobile-light.jpg");
+}
+
+@media screen and (min-width: 1440px) {
+  [data-theme="light"] body {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
+}
+
+[data-theme="dark"] {
+  --background-body: var(--clr-dt-veryDarkBlue);
+  --color-body: var(--clr-dt-darkGrayishBlue);
+  --color-h1: var(--clr-lt-lightGray);
+}
+
+[data-theme="dark"] body {
+  background-image: url("../images/bg-mobile-dark.jpg");
+}
+
+@media screen and (min-width: 1440px) {
+  [data-theme="dark"] body {
+    background-image: url("../images/bg-desktop-dark.jpg");
+  }
+}
+
+
+body {
+  background-color: var(--background-body);
+  color: var(--color-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1 {
+  color: var(--color-h1);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-600);
+  letter-spacing: .75rem;
+  text-transform: uppercase;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .visually-hidden {
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

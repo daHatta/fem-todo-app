@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# added
+/design
+info.txt
+README-info.md
+README-next.md
+README-template.md
+style-guide.md
