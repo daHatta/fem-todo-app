@@ -48,6 +48,9 @@
   --color-h1: var(--clr-lt-lightGray);
   --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
   --bg-add-todo-field: var(--clr-lt-lightGray);
+  --bg-counter: var(--clr-lt-lightGray);
+  --bg-options: var(--clr-lt-lightGray);
+  --bg-delete: var(--clr-lt-lightGray);
 }
 
 [data-theme="light"] body {
@@ -66,6 +69,9 @@
   --color-h1: var(--clr-lt-lightGray);
   --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
   --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
+  --bg-counter: var(--clr-dt-veryDarkDesaturatedBlue);
+  --bg-options: var(--clr-dt-veryDarkDesaturatedBlue);
+  --bg-delete: var(--clr-dt-veryDarkDesaturatedBlue);
 }
 
 [data-theme="dark"] body {
@@ -126,6 +132,30 @@ input[type="checkbox"] {
 
 .addToDo {
   background-color: var(--bg-add-todo-field);
+}
+
+.counter {
+  background-color: var(--bg-counter);
+  grid-area: counter;
+  font-size: var(--fs-300);
+}
+
+.options {
+  background-color: var(--bg-options);
+  grid-area: options;
+}
+
+@media screen and (min-width: 1440px) {
+  .options {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+  }
+}
+
+.delete {
+  background-color: var(--bg-delete);
+  grid-area: delete;
+  font-size: var(--fs-300);
 }
 
 @layer utilities {

@@ -66,16 +66,16 @@ export default function Home() {
         </li>
       </ul>
 
-      <div>
-        <div>
+      <div className="grid grid-areas-slim gap-y-[15px] 2xl:grid-areas-wide">
+        <div className="counter flex justify-start p-[17px] rounded-bl-lg 2xl:rounded-s-lg">
           <span>5 items left</span>
         </div>
-        <div>
+        <div className="options flex justify-center gap-[20px] p-[17px] rounded-[6px] 2xl:rounded-none">
           <Link href={"/"}>All</Link>
           <Link href={"/"}>Active</Link>
           <Link href={"/"}>Completed</Link>
         </div>
-        <div>
+        <div className="delete flex justify-end p-[17px] rounded-br-lg 2xl:rounded-e-lg">
           <Link href={"/"}>Clear Completed</Link>
         </div>
       </div>

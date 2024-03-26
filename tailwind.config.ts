@@ -14,8 +14,24 @@ const config: Config = {
       "xl": "1280px",
       "2xl": "1440px",
     },
+    extend: {
+      gridTemplateAreas: {
+        "wide": [
+          "counter options delete",
+        ],
+        "slim": [
+          "counter delete",
+          "options options",
+        ]
+      }
+    }
   },
-  plugins: [],
+  plugins: [
+    require("@savvywombat/tailwindcss-grid-areas")
+  ],
+  variants: {
+    gridTemplateAreas: ["responsive"],
+  },
   darkMode: ["selector", "[data-theme='dark']"],
 };
 export default config;
