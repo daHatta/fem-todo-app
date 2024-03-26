@@ -25,6 +25,8 @@
   --clr-dt-veryDarkGrayishBlue-l2: hsl(237, 14%, 26%);
 
   /* Typo */
+  --fs-200: .75rem;   /* 12px */
+  --fs-300: .875rem;  /* 14px */
   --fs-400: 1rem;     /* 16px */
   --fs-500: 1.125rem; /* 18px */
   --fs-600: 1.25rem;  /* 20px */
@@ -44,6 +46,8 @@
   --background-body: var(--clr-lt-veryLightGrayishBlue);
   --color-body: var(--clr-lt-darkGrayishBlue);
   --color-h1: var(--clr-lt-lightGray);
+  --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
+  --bg-add-todo-field: var(--clr-lt-lightGray);
 }
 
 [data-theme="light"] body {
@@ -60,6 +64,8 @@
   --background-body: var(--clr-dt-veryDarkBlue);
   --color-body: var(--clr-dt-darkGrayishBlue);
   --color-h1: var(--clr-lt-lightGray);
+  --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
+  --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
 }
 
 [data-theme="dark"] body {
@@ -90,6 +96,36 @@ h1 {
   font-size: var(--fs-600);
   letter-spacing: .75rem;
   text-transform: uppercase;
+}
+
+input[type="text"] {
+  background-color: var(--bg-add-todo-field);
+  outline: none;
+}
+
+input[type="text"],
+input[type="text"]::placeholder {
+  font-size: var(--fs-300);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: var(--bg-add-todo-field);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 25px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.addToDo {
+  background-color: var(--bg-add-todo-field);
 }
 
 @layer utilities {
