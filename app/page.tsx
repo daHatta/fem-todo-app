@@ -64,7 +64,7 @@ export default function Home() {
         </li>
       </ul>
 
-      <div className="grid grid-areas-slim gap-y-[15px] 2xl:grid-areas-wide">
+      <div className="grid grid-areas-slim gap-y-[15px] drop-shadow-lg 2xl:grid-areas-wide">
         <div className="counter flex justify-start p-[17px] rounded-bl-lg">
           <span>5 items left</span>
         </div>

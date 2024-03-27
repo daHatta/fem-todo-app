@@ -53,7 +53,9 @@
   --bg-todo-li-border: var(--clr-lt-darkGrayishBlue);
   --bg-counter: var(--clr-lt-white);
   --bg-options: var(--clr-lt-white);
+  --a-options: var(--clr-lt-veryDarkGrayishBlue);
   --bg-delete: var(--clr-lt-white);
+  --a-delete: var(--clr-lt-veryDarkGrayishBlue);
 }
 
 [data-theme="light"] body {
@@ -69,14 +71,16 @@
 [data-theme="dark"] {
   --background-body: var(--clr-dt-veryDarkBlue);
   --color-body: var(--clr-dt-darkGrayishBlue);
-  --color-h1: var(--clr-lt-lightGray);
-  --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
+  --color-h1: var(--clr-dt-lightGrayishBlue);
+  --stroke-checkbox: var(--clr-dt-lightGrayishBlue);
   --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-item: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-border: var(--clr-dt-darkGrayishBlue);
   --bg-counter: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-options: var(--clr-dt-veryDarkDesaturatedBlue);
+  --a-options: var(--clr-dt-lightGrayishBlue-hover);
   --bg-delete: var(--clr-dt-veryDarkDesaturatedBlue);
+  --a-delete: var(--clr-dt-lightGrayishBlue-hover);
 }
 
 [data-theme="dark"] body {
@@ -157,20 +161,24 @@ input[type="checkbox"] {
 
 .options {
   background-color: var(--bg-options);
+  font-size: var(--fs-300);
   grid-area: options;
 }
 
-@media screen and (min-width: 1440px) {
-  .options {
-    font-size: var(--fs-300);
-    font-weight: var(--fw-bold);
-  }
+.options a:hover,
+.options a:focus-visible {
+  color: var(--a-options);
 }
 
 .delete {
   background-color: var(--bg-delete);
   grid-area: delete;
   font-size: var(--fs-300);
+}
+
+.delete a:hover,
+.delete a:focus-visible {
+  color: var(--a-delete);
 }
 
 @layer utilities {
