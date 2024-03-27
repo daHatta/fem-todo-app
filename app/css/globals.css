@@ -9,6 +9,7 @@
   --clr-checkEnd: hsl(280, 87%, 65%);
 
   /* Colors for Light Theme */
+  --clr-lt-white: hsl(0, 0%, 100%);
   --clr-lt-lightGray: hsl(0, 0%, 98%);
   --clr-lt-veryLightGrayishBlue: hsl(236, 33%, 92%);
   --clr-lt-lightGrayishBlue: hsl(233, 11%, 84%);
@@ -43,14 +44,16 @@
 }
 
 [data-theme="light"] {
-  --background-body: var(--clr-lt-veryLightGrayishBlue);
+  --background-body: var(--clr-lt-lightGray);
   --color-body: var(--clr-lt-darkGrayishBlue);
   --color-h1: var(--clr-lt-lightGray);
   --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
-  --bg-add-todo-field: var(--clr-lt-lightGray);
-  --bg-counter: var(--clr-lt-lightGray);
-  --bg-options: var(--clr-lt-lightGray);
-  --bg-delete: var(--clr-lt-lightGray);
+  --bg-add-todo-field: var(--clr-lt-white);
+  --bg-todo-li-item: var(--clr-lt-white);
+  --bg-todo-li-border: var(--clr-lt-darkGrayishBlue);
+  --bg-counter: var(--clr-lt-white);
+  --bg-options: var(--clr-lt-white);
+  --bg-delete: var(--clr-lt-white);
 }
 
 [data-theme="light"] body {
@@ -69,6 +72,8 @@
   --color-h1: var(--clr-lt-lightGray);
   --stroke-checkbox: var(--clr-lt-darkGrayishBlue);
   --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
+  --bg-todo-li-item: var(--clr-dt-veryDarkDesaturatedBlue);
+  --bg-todo-li-border: var(--clr-dt-darkGrayishBlue);
   --bg-counter: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-options: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-delete: var(--clr-dt-veryDarkDesaturatedBlue);
@@ -132,6 +137,16 @@ input[type="checkbox"] {
 
 .addToDo {
   background-color: var(--bg-add-todo-field);
+}
+
+.toDo {
+  background-color: var(--bg-todo-li-item);
+  border-bottom: 1px solid var(--bg-todo-li-border);
+}
+
+.toDo:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .counter {

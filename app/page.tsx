@@ -9,8 +9,6 @@ export default function Home() {
 
   const [todoList, setTodoList] = useState([]);
 
-
-
   return (
     <main>
       <div className="addToDo flex gap-x-[10px] justify-center items-center w-full p-[12px] rounded-[6px]">
@@ -25,16 +23,16 @@ export default function Home() {
         </div>
       </div>
 
-      <ul>
-        <li>
+      <ul className="mt-[16px]">
+        <li className="toDo flex flex-row justify-center items-center gap-x-[10px] p-[12px]">
           <div>
             <label>
-              <input type="checkbox" disabled />
-              <span className="visually-hidden">Checkbox - disabled</span>
+              <input type="checkbox" />
+              <span className="visually-hidden">Checkbox</span>
             </label>
           </div>
-          <div className="w-full">
-            <input type="text" placeholder="Create a new todo..." />
+          <div className="flex flex-row justify-between items-center gap-x-[10px] w-full">
+            <input type="text" placeholder="Create a new todo..." className="w-full" />
             <button type="button">
               <Image 
                 src={iconCross}
@@ -45,15 +43,15 @@ export default function Home() {
             </button>
           </div>
         </li>
-        <li>
+        <li className="toDo flex flex-row justify-center items-center gap-x-[10px] p-[12px]">
           <div>
             <label>
-              <input type="checkbox" disabled />
-              <span className="visually-hidden">Checkbox - disabled</span>
+              <input type="checkbox" />
+              <span className="visually-hidden">Checkbox</span>
             </label>
           </div>
-          <div className="w-full">
-            <input type="text" placeholder="Create a new todo..." />
+          <div className="flex flex-row justify-between items-center gap-x-[10px] w-full">
+            <input type="text" placeholder="Create a new todo..." className="w-full" />
             <button type="button">
               <Image 
                 src={iconCross}
@@ -67,7 +65,7 @@ export default function Home() {
       </ul>
 
       <div className="grid grid-areas-slim gap-y-[15px] 2xl:grid-areas-wide">
-        <div className="counter flex justify-start p-[17px] rounded-bl-lg 2xl:rounded-s-lg">
+        <div className="counter flex justify-start p-[17px] rounded-bl-lg">
           <span>5 items left</span>
         </div>
         <div className="options flex justify-center gap-[20px] p-[17px] rounded-[6px] 2xl:rounded-none">
@@ -75,7 +73,7 @@ export default function Home() {
           <Link href={"/"}>Active</Link>
           <Link href={"/"}>Completed</Link>
         </div>
-        <div className="delete flex justify-end p-[17px] rounded-br-lg 2xl:rounded-e-lg">
+        <div className="delete flex justify-end p-[17px] rounded-br-lg">
           <Link href={"/"}>Clear Completed</Link>
         </div>
       </div>
