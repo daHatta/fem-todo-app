@@ -139,7 +139,7 @@ input[type="checkbox"] {
   place-content: center;
 }
 
-.addToDo {
+.newToDo {
   background-color: var(--bg-add-todo-field);
 }
 
