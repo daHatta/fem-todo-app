@@ -51,6 +51,9 @@
   --bg-add-todo-field: var(--clr-lt-white);
   --bg-todo-li-item: var(--clr-lt-white);
   --bg-todo-li-border: var(--clr-lt-darkGrayishBlue);
+  --color-input: var(--clr-lt-darkGrayishBlue);
+  --color-input-hover: var(--clr-dt-veryDarkBlue);
+  --color-placeholder: var(--clr-lt-darkGrayishBlue);
   --bg-counter: var(--clr-lt-white);
   --bg-options: var(--clr-lt-white);
   --a-options: var(--clr-lt-veryDarkGrayishBlue);
@@ -76,6 +79,9 @@
   --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-item: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-border: var(--clr-dt-darkGrayishBlue);
+  --color-input: var(--clr-dt-darkGrayishBlue);
+  --color-input-hover: var(--clr-dt-veryDarkBlue);
+  --color-placeholder: var(--clr-dt-darkGrayishBlue);
   --bg-counter: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-options: var(--clr-dt-veryDarkDesaturatedBlue);
   --a-options: var(--clr-dt-lightGrayishBlue-hover);
@@ -115,11 +121,13 @@ h1 {
 
 input[type="text"] {
   background-color: var(--bg-add-todo-field);
+  color: var(--color-input);
+  font-size: var(--fs-300);
   outline: none;
 }
 
-input[type="text"],
 input[type="text"]::placeholder {
+  color: var(--color-placeholder);
   font-size: var(--fs-300);
 }
 
@@ -130,13 +138,56 @@ input[type="checkbox"] {
   margin: 0;
   font: inherit;
   color: currentColor;
+  cursor: pointer;
   width: 20px;
   height: 20px;
-  border: 2px solid currentColor;
+  border: 1px solid currentColor;
   border-radius: 25px;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  border: 1px solid transparent;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  margin-left: 1px;
+  width: 18px;
+  height: 18px;
+  background: url("../images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center, center;
+}
+
+
+input[type="checkbox"]:not(:disabled):checked {
+
+}
+
+input[type="checkbox"]:disabled {
+  cursor: default;
+}
+
+input[type="checkbox"]:disabled:checked {
+
+}
+
+input[type="checkbox"]:not(:disabled):hover {
+  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item)) padding-box,
+              linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  border-radius: 25px;
+  border: 1px solid transparent;
+}
+
+input[type="checkbox"]:focus-visible {
+  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item)) padding-box,
+              linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  border-radius: 25px;
+  border: 1px solid transparent;
 }
 
 .newToDo {
@@ -151,6 +202,20 @@ input[type="checkbox"] {
 .toDo:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+}
+
+.toDoTitle:hover input {
+  color: var(--color-input);
+}
+
+@media screen and (min-width: 1440px) {
+  .toDoTitle button {
+    visibility: hidden;
+  }
+
+  .toDoTitle:hover button {
+    visibility: visible;
+  }
 }
 
 .counter {

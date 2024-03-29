@@ -43,13 +43,16 @@ export default function Home() {
     <main>
       <div className="newToDo flex gap-x-[10px] justify-center items-center w-full p-[12px] rounded-[6px]">
         <div>
-          <label>
-            <input type="checkbox" disabled />
+          <label htmlFor="newTodo">
+            <input id="newTodo" type="checkbox" disabled />
             <span className="visually-hidden">Checkbox - disabled</span>
           </label>
         </div>
         <div className="w-full">
-          <input type="text" id="newToDo" value={newToDo} onChange={(e) => setNewToDo(e.target.value)} onKeyUp={(e) => handleKeyUp(e.key)} placeholder="Create a new todo..." />
+          <label htmlFor="newToDo">
+            <input className="w-full" type="text" id="newToDo" value={newToDo} onChange={(e) => setNewToDo(e.target.value)} onKeyUp={(e) => handleKeyUp(e.key)} placeholder="Create a new todo..." />
+            <span className="visually-hidden">Create new Todo</span>
+          </label>
         </div>
       </div>
       
@@ -64,9 +67,12 @@ export default function Home() {
                     <span className="visually-hidden">Checkbox</span>
                   </label>
                 </div>
-                <div className="flex flex-row justify-between items-center gap-x-[10px] w-full">
-                  <input type="text" value={item.content} placeholder="Create a new todo..." className="w-full" />
-                  <button type="button" onClick={() => handleDelete(index)}>
+                <div className="todoTitle flex flex-row items-center gap-x-[10px] w-full">
+                  <label htmlFor={`${item.id}`} className="grow">
+                    <input id={`${item.id}`} type="text" value={item.content} className="w-full" />
+                    <span className="visually-hidden">Input</span>
+                  </label>
+                  <button type="button" onClick={() => handleDelete(index)} className="flex-none w-[11px]">
                     <Image 
                       src={iconCross}
                       width={12}
