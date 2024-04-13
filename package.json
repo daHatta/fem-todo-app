@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
     "@savvywombat/tailwindcss-grid-areas": "^4.0.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",

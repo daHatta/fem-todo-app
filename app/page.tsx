@@ -1,105 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import iconCross from "./images/icon-cross.svg";
+import Form from "./components/Form";
+import { ToDoData } from "./types";
+import StatusBar from "./components/StatusBar";
 
 export default function Home() {
-
-  const [newToDo, setNewToDo] = useState("");
-  const [toDoList, setToDoList] = useState([
-    { id: "1", content: "Item 1"},
-    { id: "2", content: "Item 2"},
-    { id: "3", content: "Item 3"},
-  ]);
-
-  const getRandomNumber = () => {
-    return Math.floor(Math.random() * 9999);
-  }
-
-  const handleKeyUp = (key: string) => {
-    if (key === "Enter" && newToDo) {
-      const randomNumber = getRandomNumber();
-
-      const newItem = {
-        id: `item-${randomNumber}`,
-        content: newToDo,
-      }
-
-      setToDoList(toDoList.concat(newItem));
-
-      setNewToDo("");
-    }
-  }
-
-  const handleDelete = (id: number) => {
-    if (id > -1) {
-      setToDoList(toDoList.slice(0, id).concat(toDoList.slice(id+1)))
-    }
-  }
+  const [toDoList, setToDoList] = useState<ToDoData[]>([
+    { id: "1", task: "Item 1", completed: false },
+    { id: "2", task: "Item 2", completed: true },
+    { id: "3", task: "Item 3", completed: false },
+    { id: "4", task: "Item 4", completed: false },
+  ] as ToDoData[]);
 
   return (
     <main>
-      <div className="newToDo flex gap-x-[10px] justify-center items-center w-full p-[12px] rounded-[6px]">
-        <div>
-          <label htmlFor="newTodo">
-            <input id="newTodo" type="checkbox" disabled />
-            <span className="visually-hidden">Checkbox - disabled</span>
-          </label>
-        </div>
-        <div className="w-full">
-          <label htmlFor="newToDo">
-            <input className="w-full" type="text" id="newToDo" value={newToDo} onChange={(e) => setNewToDo(e.target.value)} onKeyUp={(e) => handleKeyUp(e.key)} placeholder="Create a new todo..." />
-            <span className="visually-hidden">Create new Todo</span>
-          </label>
-        </div>
-      </div>
-      
-      <ul className="mt-[16px]">
-        {
-          toDoList?.map((item, index) => {
-            return (
-              <li key={item.id} className="toDo flex flex-row justify-center items-center gap-x-[10px] p-[12px]">
-                <div>
-                  <label htmlFor={`${index}`}>
-                    <input id={`${index}`} type="checkbox" />
-                    <span className="visually-hidden">Checkbox</span>
-                  </label>
-                </div>
-                <div className="todoTitle flex flex-row items-center gap-x-[10px] w-full">
-                  <label htmlFor={`${item.id}`} className="grow">
-                    <input id={`${item.id}`} type="text" value={item.content} className="w-full" />
-                    <span className="visually-hidden">Input</span>
-                  </label>
-                  <button type="button" onClick={() => handleDelete(index)} className="flex-none w-[11px]">
-                    <Image 
-                      src={iconCross}
-                      width={12}
-                      height={12}
-                      alt="Icon Cross"
-                    />
-                  </button>
-                </div>
-              </li>
-            )
-          })
-        }
-      </ul>
-
-      <div className="grid grid-areas-slim gap-y-[15px] drop-shadow-lg 2xl:grid-areas-wide">
-        <div className="counter flex justify-start p-[17px] rounded-bl-lg">
-          <span>{toDoList.length} items left</span>
-        </div>
-        <div className="options flex justify-center gap-[20px] p-[17px] rounded-[6px] 2xl:rounded-none">
-          <Link href={"/"}>All</Link>
-          <Link href={"/"}>Active</Link>
-          <Link href={"/"}>Completed</Link>
-        </div>
-        <div className="delete flex justify-end p-[17px] rounded-br-lg">
-          <Link href={"/"}>Clear Completed</Link>
-        </div>
-      </div>
+      <Form toDoList={toDoList} setToDoList={setToDoList} />
+      {toDoList.length > 0 && (
+        <StatusBar toDoList={toDoList} setToDoList={setToDoList} />
+      )}
     </main>
   );
-};
+}

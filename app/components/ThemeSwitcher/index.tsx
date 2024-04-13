@@ -34,7 +34,7 @@ const ThemeSwitcher = () => {
                         width={20}
                         height={20}
                         alt="Icon Sun"
-                        priority={true}
+                        priority
                     />
             </button>
         )
@@ -49,7 +49,7 @@ const ThemeSwitcher = () => {
                         width={20}
                         height={20}
                         alt="Icon Moon"
-                        priority={true}
+                        priority
                     />
             </button>
         )
