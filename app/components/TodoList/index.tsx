@@ -9,7 +9,11 @@ import {
 import Image from "next/image";
 import iconCross from "../../images/icon-cross.svg";
 
-const TodoList = ({ toDoList, setToDoList }: TodoListPropsType) => {
+const TodoList = ({
+  toDoList,
+  setToDoList,
+  filteredList,
+}: TodoListPropsType) => {
   /* Function to set task as completed or active */
   const handleCompleted = (id: string) => {
     const items = Array.from(toDoList);
@@ -55,7 +59,7 @@ const TodoList = ({ toDoList, setToDoList }: TodoListPropsType) => {
             ref={dropProvided.innerRef}
           >
             {toDoList &&
-              toDoList.map((item, index) => (
+              filteredList.map((item, index) => (
                 <Draggable draggableId={item.id} key={item.id} index={index}>
                   {(dragProvided, snapshot) => (
                     <li

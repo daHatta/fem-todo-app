@@ -12,9 +12,12 @@ export type FormPropsType = {
 export type TodoListPropsType = {
   toDoList: ToDoData[];
   setToDoList: React.Dispatch<React.SetStateAction<ToDoData[]>>;
+  filteredList: ToDoData[];
 };
 
 export type StatusBarPropsType = {
   toDoList: ToDoData[];
   setToDoList: React.Dispatch<React.SetStateAction<ToDoData[]>>;
+  handleSelectedFilter: (a: string) => void;
+  filteredList: ToDoData[];
 };
