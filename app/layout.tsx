@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { josefin_sans } from "./fonts";
+import { josefin_sans } from "./fonts/index";
 import "./css/globals.css";
 import Header from "./components/Header";
 import Attribution from "./components/Attribution";
 import { Providers } from "./providers";
 import Notice from "./components/Notice";
-
 
 export const metadata: Metadata = {
   title: "Todo App",
@@ -19,12 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <link rel="icon" href="./favicon-32x32.png" type="image/png" sizes="32x32" />
+      <link
+        rel="icon"
+        href="./favicon-32x32.png"
+        type="image/png"
+        sizes="32x32"
+      />
       <body className={`${josefin_sans.className}`}>
         <Providers>
           <div className="w-[375px] m-auto px-[24px] 2xl:w-[540px]">
             <Header />
-              {children}
+            {children}
             <Notice />
             <Attribution />
           </div>
