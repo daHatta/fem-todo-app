@@ -36,6 +36,7 @@ const TodoList = ({
             {toDoList &&
               filteredList.map((item, index) => (
                 <TodoItem
+                  key={index}
                   index={index}
                   item={item}
                   toDoList={toDoList}
