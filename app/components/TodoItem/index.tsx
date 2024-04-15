@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./index.module.css";
+import classes from "./index.module.css";
 import { TodoItemPropsType } from "@/app/types";
 import { Draggable } from "@hello-pangea/dnd";
 import Image from "next/image";
@@ -40,7 +40,7 @@ const TodoItem = ({
           ref={dragProvided.innerRef}
           {...dragProvided.draggableProps}
           {...dragProvided.dragHandleProps}
-          className="toDo flex flex-row justify-between items-center gap-x-[10px] py-[14px] px-[16px]"
+          className="todo flex flex-row justify-between items-center gap-x-[10px] py-[14px] px-[16px]"
         >
           <div className="flex flex-row justify-center items-center gap-x-[10px]">
             <input
@@ -50,7 +50,7 @@ const TodoItem = ({
               onClick={() => handleCompleted(item.id)}
             />
             <label htmlFor={`${index}`}>
-              <span className={item.completed ? styles.completed : ""}>
+              <span className={item.completed ? classes.completed : ""}>
                 {item.task}
               </span>
             </label>
@@ -58,7 +58,7 @@ const TodoItem = ({
           <button
             type="button"
             onClick={() => handleDelete(index)}
-            className="flex-none w-[16px]"
+            className="btn-delete flex-none w-[16px]"
           >
             <Image src={iconCross} width={16} height={16} alt="Icon Cross" />
           </button>

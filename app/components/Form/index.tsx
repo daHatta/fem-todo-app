@@ -23,7 +23,7 @@ const Form = ({ toDoList, setToDoList }: FormPropsType) => {
   };
 
   return (
-    <div className="newToDo flex gap-x-[10px] justify-center items-center w-full py-[12px] px-[16px] rounded-[6px]">
+    <div className="newtodo flex gap-x-[10px] justify-center items-center w-full py-[12px] px-[16px] rounded-[6px]">
       <div>
         <label htmlFor="newTodo">
           <input id="newTodo" type="checkbox" disabled />

@@ -207,30 +207,30 @@ label {
   font-size: var(--fs-300);
 }
 
-.newToDo {
+.newtodo {
   background-color: var(--bg-add-todo-field);
 }
 
-.toDo {
+.todo {
   background-color: var(--bg-todo-li-item);
   border-bottom: 1px solid var(--bg-todo-li-border);
 }
 
-.toDo:first-child {
+.todo:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-.toDoTitle:hover input {
+.todoTitle:hover input {
   color: var(--color-input);
 }
 
 @media screen and (min-width: 1440px) {
-  .toDoTitle button {
+  .todo .btn-delete {
     visibility: hidden;
   }
 
-  .toDoTitle:hover button {
+  .todo:hover .btn-delete {
     visibility: visible;
   }
 }
