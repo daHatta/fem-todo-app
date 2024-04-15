@@ -5,7 +5,7 @@
 :root {
   /* Primary Colors*/
   --clr-brightBlue: hsl(220, 98%, 61%);
-  --clr-checkStart: hsl(192, 100%, 67%); 
+  --clr-checkStart: hsl(192, 100%, 67%);
   --clr-checkEnd: hsl(280, 87%, 65%);
 
   /* Colors for Light Theme */
@@ -26,11 +26,11 @@
   --clr-dt-veryDarkGrayishBlue-l2: hsl(237, 14%, 26%);
 
   /* Typo */
-  --fs-200: .75rem;   /* 12px */
-  --fs-300: .875rem;  /* 14px */
-  --fs-400: 1rem;     /* 16px */
+  --fs-200: 0.75rem; /* 12px */
+  --fs-300: 0.875rem; /* 14px */
+  --fs-400: 1rem; /* 16px */
   --fs-500: 1.125rem; /* 18px */
-  --fs-600: 1.25rem;  /* 20px */
+  --fs-600: 1.25rem; /* 20px */
 
   --fw-400: 400;
   --fw-700: 700;
@@ -40,7 +40,6 @@
 
   --fw-regular: var(--fw-400);
   --fw-bold: var(--fw-700);
-
 }
 
 [data-theme="light"] {
@@ -99,7 +98,6 @@
   }
 }
 
-
 body {
   background-color: var(--background-body);
   color: var(--color-body);
@@ -115,7 +113,7 @@ h1 {
   color: var(--color-h1);
   font-weight: var(--fw-700);
   font-size: var(--fs-600);
-  letter-spacing: .75rem;
+  letter-spacing: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -149,7 +147,12 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background: linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  background: linear-gradient(
+      130deg,
+      var(--clr-checkStart),
+      var(--clr-checkEnd)
+    )
+    border-box;
   border: 1px solid transparent;
 }
 
@@ -163,9 +166,8 @@ input[type="checkbox"]:checked::after {
   background-position: center, center;
 }
 
-
-input[type="checkbox"]:not(:disabled):checked {
-
+input[type="checkbox"]:not(:disabled):hover:checked::after {
+  background: none;
 }
 
 input[type="checkbox"]:disabled {
@@ -173,21 +175,28 @@ input[type="checkbox"]:disabled {
 }
 
 input[type="checkbox"]:disabled:checked {
-
 }
 
 input[type="checkbox"]:not(:disabled):hover {
-  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item)) padding-box,
-              linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item))
+      padding-box,
+    linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd))
+      border-box;
   border-radius: 25px;
   border: 1px solid transparent;
 }
 
 input[type="checkbox"]:focus-visible {
-  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item)) padding-box,
-              linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd)) border-box;
+  background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item))
+      padding-box,
+    linear-gradient(130deg, var(--clr-checkStart), var(--clr-checkEnd))
+      border-box;
   border-radius: 25px;
   border: 1px solid transparent;
+}
+
+label {
+  cursor: pointer;
 }
 
 .newToDo {

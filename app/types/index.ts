@@ -15,6 +15,13 @@ export type TodoListPropsType = {
   filteredList: ToDoData[];
 };
 
+export type TodoItemPropsType = {
+  index: number;
+  item: ToDoData;
+  toDoList: ToDoData[];
+  setToDoList: React.Dispatch<React.SetStateAction<ToDoData[]>>;
+};
+
 export type StatusBarPropsType = {
   toDoList: ToDoData[];
   setToDoList: React.Dispatch<React.SetStateAction<ToDoData[]>>;
