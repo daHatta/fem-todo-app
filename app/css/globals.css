@@ -50,7 +50,9 @@
   --bg-add-todo-field: var(--clr-lt-white);
   --bg-todo-li-item: var(--clr-lt-white);
   --bg-todo-li-border: var(--clr-lt-darkGrayishBlue);
-  --color-input: var(--clr-lt-darkGrayishBlue);
+  --color-input: var(--clr-lt-veryDarkGrayishBlue);
+  --color-label: var(--clr-lt-veryDarkGrayishBlue);
+  --color-label-completed: var(--clr-lt-darkGrayishBlue);
   --color-input-hover: var(--clr-dt-veryDarkBlue);
   --color-placeholder: var(--clr-lt-darkGrayishBlue);
   --bg-counter: var(--clr-lt-white);
@@ -58,6 +60,7 @@
   --a-options: var(--clr-lt-veryDarkGrayishBlue);
   --bg-delete: var(--clr-lt-white);
   --a-delete: var(--clr-lt-veryDarkGrayishBlue);
+  --a-active: var(--clr-brightBlue);
 }
 
 [data-theme="light"] body {
@@ -78,7 +81,9 @@
   --bg-add-todo-field: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-item: var(--clr-dt-veryDarkDesaturatedBlue);
   --bg-todo-li-border: var(--clr-dt-darkGrayishBlue);
-  --color-input: var(--clr-dt-darkGrayishBlue);
+  --color-input: var(--clr-dt-lightGrayishBlue);
+  --color-label: var(--clr-dt-lightGrayishBlue);
+  --color-label-completed: var(--clr-dt-darkGrayishBlue);
   --color-input-hover: var(--clr-dt-veryDarkBlue);
   --color-placeholder: var(--clr-dt-darkGrayishBlue);
   --bg-counter: var(--clr-dt-veryDarkDesaturatedBlue);
@@ -86,6 +91,7 @@
   --a-options: var(--clr-dt-lightGrayishBlue-hover);
   --bg-delete: var(--clr-dt-veryDarkDesaturatedBlue);
   --a-delete: var(--clr-dt-lightGrayishBlue-hover);
+  --a-active: var(--clr-brightBlue);
 }
 
 [data-theme="dark"] body {
@@ -197,6 +203,8 @@ input[type="checkbox"]:focus-visible {
 
 label {
   cursor: pointer;
+  color: var(--color-label);
+  font-size: var(--fs-300);
 }
 
 .newToDo {

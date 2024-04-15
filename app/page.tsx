@@ -41,6 +41,7 @@ export default function Home() {
           setToDoList={setToDoList}
           handleSelectedFilter={handleSelectedFilter}
           filteredList={filteredList}
+          filterValue={filterValue}
         />
       )}
     </main>

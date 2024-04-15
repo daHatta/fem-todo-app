@@ -27,4 +27,5 @@ export type StatusBarPropsType = {
   setToDoList: React.Dispatch<React.SetStateAction<ToDoData[]>>;
   handleSelectedFilter: (a: string) => void;
   filteredList: ToDoData[];
+  filterValue: string;
 };

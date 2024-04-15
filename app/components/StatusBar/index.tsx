@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { StatusBarPropsType } from "@/app/types";
 import TodoList from "../TodoList";
+
+import styles from "./index.module.css";
 
 const StatusBar = ({
   toDoList,
   setToDoList,
   handleSelectedFilter,
   filteredList,
+  filterValue,
 }: StatusBarPropsType) => {
   const activeTasks = toDoList.filter((task) => !task.completed).length;
 
@@ -33,13 +36,27 @@ const StatusBar = ({
           <span>{activeTasks} items left</span>
         </div>
         <div className="options flex justify-center gap-[20px] p-[17px] rounded-[6px] 2xl:rounded-none">
-          <Link href={"/"} onClick={() => handleFilterValue("all")}>
+          <Link
+            href={"/"}
+            onClick={() => handleFilterValue("all")}
+            className={
+              filterValue === "all" || filterValue === "" ? styles.active : ""
+            }
+          >
             All
           </Link>
-          <Link href={"/"} onClick={() => handleFilterValue("active")}>
+          <Link
+            href={"/"}
+            onClick={() => handleFilterValue("active")}
+            className={filterValue === "active" ? styles.active : ""}
+          >
             Active
           </Link>
-          <Link href={"/"} onClick={() => handleFilterValue("completed")}>
+          <Link
+            href={"/"}
+            onClick={() => handleFilterValue("completed")}
+            className={filterValue === "completed" ? styles.active : ""}
+          >
             Completed
           </Link>
         </div>
