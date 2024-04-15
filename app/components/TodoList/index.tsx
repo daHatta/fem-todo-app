@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./index.module.css";
+
 import { TodoListPropsType } from "@/app/types";
 import {
   DragDropContext,
@@ -81,7 +83,13 @@ const TodoList = ({
                         </label>
                       </div>
                       <div className="todoTitle flex flex-row items-center gap-x-[10px] w-full">
-                        <div className="w-full">{item.task}</div>
+                        <div className="w-full">
+                          <span
+                            className={item.completed ? styles.completed : ""}
+                          >
+                            {item.task}
+                          </span>
+                        </div>
                         <button
                           type="button"
                           onClick={() => handleDelete(index)}
