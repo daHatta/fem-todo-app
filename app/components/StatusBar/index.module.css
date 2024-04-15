@@ -1,3 +1,4 @@
 .active {
   color: var(--a-active);
+  font-weight: var(--fw-700);
 }

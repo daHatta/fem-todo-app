@@ -1,10 +1,9 @@
-
 .attribution {
-    margin-top: 8px;
-    font-size: 11px;
-    text-align: center;
+  margin-top: 20px;
+  font-size: 11px;
+  text-align: center;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+  color: hsl(228, 45%, 44%);
 }
