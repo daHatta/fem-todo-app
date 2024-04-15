@@ -40,7 +40,7 @@ const TodoItem = ({
           ref={dragProvided.innerRef}
           {...dragProvided.draggableProps}
           {...dragProvided.dragHandleProps}
-          className="toDo flex flex-row justify-between items-center gap-x-[10px] py-[12px] px-[16px]"
+          className="toDo flex flex-row justify-between items-center gap-x-[10px] py-[14px] px-[16px]"
         >
           <div className="flex flex-row justify-center items-center gap-x-[10px]">
             <input
