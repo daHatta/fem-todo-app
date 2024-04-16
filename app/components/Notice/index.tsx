@@ -2,7 +2,7 @@ import classes from "./index.module.css";
 
 const Notice = () => {
   return (
-    <p className={`${classes.notice} text-center pt-[43px]`}>
+    <p className={`${classes.notice} text-center mt-[39px]`}>
       Drag and drop to reorder list
     </p>
   );

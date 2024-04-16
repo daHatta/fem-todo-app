@@ -40,7 +40,7 @@ const TodoItem = ({
           ref={dragProvided.innerRef}
           {...dragProvided.draggableProps}
           {...dragProvided.dragHandleProps}
-          className="todo flex flex-row justify-between items-center gap-x-[10px] py-[14px] px-[16px]"
+          className="todo flex flex-row justify-between items-center gap-x-[10px] pt-[17px] pb-[15px] px-[20px]"
         >
           <div className="flex flex-row justify-center items-center gap-x-[10px]">
             <input
@@ -58,7 +58,7 @@ const TodoItem = ({
           <button
             type="button"
             onClick={() => handleDelete(index)}
-            className="btn-delete flex-none w-[16px]"
+            className="btn-delete flex-none"
           >
             <Image src={iconCross} width={16} height={16} alt="Icon Cross" />
           </button>

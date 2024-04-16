@@ -26,11 +26,14 @@
   --clr-dt-veryDarkGrayishBlue-l2: hsl(237, 14%, 26%);
 
   /* Typo */
+  --fs-100: 0.625rem; /* 10px */
   --fs-200: 0.75rem; /* 12px */
   --fs-300: 0.875rem; /* 14px */
   --fs-400: 1rem; /* 16px */
   --fs-500: 1.125rem; /* 18px */
   --fs-600: 1.25rem; /* 20px */
+  --fs-700: 1.5rem; /* 24px */
+  --fs-750: 1.75rem; /* 28px */
 
   --fw-400: 400;
   --fw-700: 700;
@@ -46,13 +49,13 @@
   --background-body: var(--clr-lt-lightGray);
   --color-body: var(--clr-lt-darkGrayishBlue);
   --color-h1: var(--clr-lt-lightGray);
-  --border-checkbox: var(--clr-lt-lightGrayishBlue);
+  --border-checkbox: var(--clr-lt-veryLightGrayishBlue);
   --bg-add-todo-field: var(--clr-lt-white);
   --bg-todo-li-item: var(--clr-lt-white);
   --bg-todo-li-border: var(--clr-lt-lightGrayishBlue);
   --color-input: var(--clr-lt-veryDarkGrayishBlue);
   --color-label: var(--clr-lt-veryDarkGrayishBlue);
-  --color-label-completed: var(--clr-lt-darkGrayishBlue);
+  --color-label-completed: var(--clr-lt-lightGrayishBlue);
   --color-input-hover: var(--clr-dt-veryDarkBlue);
   --color-placeholder: var(--clr-lt-darkGrayishBlue);
   --bg-counter: var(--clr-lt-white);
@@ -115,24 +118,16 @@ body {
   min-height: 100dvh;
 }
 
-h1 {
-  color: var(--color-h1);
-  font-weight: var(--fw-700);
-  font-size: var(--fs-600);
-  letter-spacing: 0.75rem;
-  text-transform: uppercase;
-}
-
 input[type="text"] {
   background-color: var(--bg-add-todo-field);
   color: var(--color-input);
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
   outline: none;
 }
 
 input[type="text"]::placeholder {
   color: var(--color-placeholder);
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
 }
 
 input[type="checkbox"] {
@@ -204,7 +199,7 @@ input[type="checkbox"]:focus-visible {
 label {
   cursor: pointer;
   color: var(--color-label);
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
 }
 
 .newtodo {
@@ -217,8 +212,12 @@ label {
 }
 
 .todo:first-child {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.btn-delete {
+  width: 12px;
 }
 
 .todoTitle:hover input {
@@ -238,7 +237,7 @@ label {
 .counter {
   background-color: var(--bg-counter);
   grid-area: counter;
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
 }
 
 .options {
@@ -255,7 +254,7 @@ label {
 .delete {
   background-color: var(--bg-delete);
   grid-area: delete;
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
 }
 
 .delete a:hover,

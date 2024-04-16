@@ -35,7 +35,7 @@ const StatusBar = ({
         <div className="counter flex justify-start p-[17px] rounded-bl-lg">
           <span>{activeTasks} items left</span>
         </div>
-        <div className="options flex justify-center gap-[20px] p-[17px] rounded-[6px] 2xl:rounded-none">
+        <div className="options flex justify-center gap-[20px] py-[14px] px-[17px] rounded-[5px] 2xl:rounded-none">
           <Link
             href={"/"}
             onClick={() => handleFilterValue("all")}

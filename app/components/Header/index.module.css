@@ -1,0 +1,9 @@
+.appTitle {
+  color: var(--color-h1);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-750);
+  letter-spacing: 0.5rem;
+  line-height: 1;
+  vertical-align: baseline;
+  text-transform: uppercase;
+}
