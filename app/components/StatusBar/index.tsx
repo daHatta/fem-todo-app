@@ -32,10 +32,10 @@ const StatusBar = ({
         filteredList={filteredList}
       />
       <div className="grid grid-areas-slim gap-y-[15px] drop-shadow-lg 2xl:grid-areas-wide">
-        <div className="counter flex justify-start p-[17px] rounded-bl-lg">
+        <div className="counter flex justify-start p-[17px] rounded-bl-lg 2xl:pl-[24px] 2xl:pt-[19px] 2xl:pb-[14px]">
           <span>{activeTasks} items left</span>
         </div>
-        <div className="options flex justify-center gap-[20px] py-[14px] px-[17px] rounded-[5px] 2xl:rounded-none">
+        <div className="options flex justify-center gap-[20px] py-[14px] px-[17px] rounded-[5px] 2xl:rounded-none 2xl:pt-[19px] 2xl:pb-[14px] 2xl:pl-[20px]">
           <Link
             href={"/"}
             onClick={() => handleFilterValue("all")}
@@ -60,7 +60,7 @@ const StatusBar = ({
             Completed
           </Link>
         </div>
-        <div className="delete flex justify-end p-[17px] rounded-br-lg">
+        <div className="delete flex justify-end p-[17px] rounded-br-lg 2xl:pt-[19px] 2xl:pb-[14px] 2xl:pr-[24px]">
           <Link href={"/"} onClick={handleDeleteCompleted}>
             Clear Completed
           </Link>

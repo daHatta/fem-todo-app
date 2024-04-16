@@ -40,9 +40,9 @@ const TodoItem = ({
           ref={dragProvided.innerRef}
           {...dragProvided.draggableProps}
           {...dragProvided.dragHandleProps}
-          className="todo flex flex-row justify-between items-center gap-x-[10px] pt-[17px] pb-[15px] px-[20px]"
+          className="todo flex flex-row justify-between items-center gap-x-[10px] pt-[17px] pb-[15px] px-[20px] 2xl:gap-x-[24px] 2xl:py-[18px] 2xl:px-[24px]"
         >
-          <div className="flex flex-row justify-center items-center gap-x-[10px]">
+          <div className="flex flex-row justify-center items-center gap-x-[10px] 2xl:gap-x-[24px]">
             <input
               id={`${index}`}
               type="checkbox"

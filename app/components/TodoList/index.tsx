@@ -29,7 +29,7 @@ const TodoList = ({
       <Droppable droppableId="droppable">
         {(dropProvided) => (
           <ul
-            className="mt-[16px]"
+            className="mt-[16px] 2xl:mt-[24px]"
             {...dropProvided.droppableProps}
             ref={dropProvided.innerRef}
           >

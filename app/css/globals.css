@@ -34,6 +34,8 @@
   --fs-600: 1.25rem; /* 20px */
   --fs-700: 1.5rem; /* 24px */
   --fs-750: 1.75rem; /* 28px */
+  --fs-800: 2rem; /* 32px */
+  --fs-850: 2.5rem; /* 40px */
 
   --fw-400: 400;
   --fw-700: 700;
@@ -123,6 +125,7 @@ input[type="text"] {
   color: var(--color-input);
   font-size: var(--fs-200);
   outline: none;
+  vertical-align: middle;
 }
 
 input[type="text"]::placeholder {
@@ -174,10 +177,10 @@ input[type="checkbox"]:not(:disabled):hover:checked::after {
 input[type="checkbox"]:disabled {
   cursor: default;
 }
-
+/*
 input[type="checkbox"]:disabled:checked {
 }
-
+*/
 input[type="checkbox"]:not(:disabled):hover {
   background: linear-gradient(var(--bg-todo-li-item), var(--bg-todo-li-item))
       padding-box,
@@ -216,22 +219,12 @@ label {
   border-top-right-radius: 5px;
 }
 
-.btn-delete {
-  width: 12px;
-}
-
 .todoTitle:hover input {
   color: var(--color-input);
 }
 
-@media screen and (min-width: 1440px) {
-  .todo .btn-delete {
-    visibility: hidden;
-  }
-
-  .todo:hover .btn-delete {
-    visibility: visible;
-  }
+.btn-delete {
+  width: 12px;
 }
 
 .counter {
@@ -260,6 +253,45 @@ label {
 .delete a:hover,
 .delete a:focus-visible {
   color: var(--a-delete);
+}
+
+@media screen and (min-width: 1440px) {
+  input[type="text"] {
+    font-size: var(--fs-500);
+  }
+
+  input[type="text"]::placeholder {
+    font-size: var(--fs-500);
+  }
+
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  label {
+    font-size: var(--fs-500);
+  }
+
+  .btn-delete {
+    width: 18px;
+  }
+
+  .todo .btn-delete {
+    visibility: hidden;
+  }
+
+  .todo:hover .btn-delete {
+    visibility: visible;
+  }
+
+  .counter {
+    font-size: var(--fs-300);
+  }
+
+  .delete {
+    font-size: var(--fs-300);
+  }
 }
 
 @layer utilities {

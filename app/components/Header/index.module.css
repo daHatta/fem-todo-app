@@ -7,3 +7,10 @@
   vertical-align: baseline;
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 1440px) {
+  .appTitle {
+    font-size: var(--fs-850);
+    letter-spacing: 0.938rem;
+  }
+}

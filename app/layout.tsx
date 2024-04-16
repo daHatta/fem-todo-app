@@ -26,7 +26,7 @@ export default function RootLayout({
       />
       <body className={`${josefin_sans.className}`}>
         <Providers>
-          <div className="w-[375px] m-auto px-[24px] 2xl:w-[540px]">
+          <div className="w-[375px] m-auto px-[24px] 2xl:w-[540px] 2xl:px-0">
             <Header />
             {children}
             <Notice />
