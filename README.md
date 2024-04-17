@@ -129,10 +129,10 @@ This is a perfect challenge to learn about React/Next.js and Typescript especial
 - [Grid Areas in Tailwindcss](https://savvywombat.com.au/tailwind-css/grid-areas) - Great plugin for named grid areas in Tailwindcss by **SavvyWombat**.
 - [Coding a Todo List Using NextJS with TailwindCSS](https://www.youtube.com/watch?v=zffCSsHQx9g) - Great Video about a Todo-project made by **Codr Kai**.
 - [React For Beginners 29: Todo App Part 2 Preview Of The App](https://www.youtube.com/watch?v=Y_IiNLsQmD8&list=PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza&index=29) - Awesome Video series about React for Beginners made by **Code Stoic**. I learned a lot about React by watching his series from the beginning.
-- [React JS Typescript Drag and Drop](https://www.youtube.com/watch?v=dRLYO1-dhQU) - Awesome video about the use of react-beautiful-dnd made by **Nic Valdez** from **Darwin Tech**.
 - [React For Beginners 45: Sorting Items In A Todo List](https://www.youtube.com/watch?v=fu_PYQ0b-uQ) - Great Video by **Code Stoic**, which is part of the series mentioned before.
 - [#34 Filtering a List in React | working with React events | A Complete React Course](https://www.youtube.com/watch?v=weFOaIHlDpo) - Great Video by **procademy**, also part of a bigger series.
 - [The useState Hook as a Props In React with Typescript](https://www.youtube.com/watch?v=qot-mSwWTDI) - Nice intro in dealing with types as Props for components made by **proCodeZone**.
+- [React JS Typescript Drag and Drop](https://www.youtube.com/watch?v=dRLYO1-dhQU) - Awesome video about the use of react-beautiful-dnd made by **Nic Valdez** from **Darwin Tech**.
 
 ## Author
 
