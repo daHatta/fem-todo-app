@@ -114,7 +114,7 @@ const handleSelectedFilter = (filter: string) => {
 ```
 
 Getting the filter value from the child-component was needed to set the value of the useState-Hook in the parent element.
-This would allow the app to set up a filtered List which can be provided for the TodoList component.
+It allows the app to set up a filtered list which can be provided for the output in the TodoList component.
 
 ### Continued development
 
