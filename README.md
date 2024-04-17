@@ -55,29 +55,66 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Packages used in this project:
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
+// ...
+
+"dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
+    "@savvywombat/tailwindcss-grid-areas": "^4.0.0",
+    "next": "14.1.4",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+
+// ...
+```
+
+There where some tricky parts to solve, i.e. the styling of custom checkboxes:
+
+```css
+/* ... */
+input[type="checkbox"]:checked {
+  background: linear-gradient(
+      130deg,
+      var(--clr-checkStart),
+      var(--clr-checkEnd)
+    ) border-box;
+  border: 1px solid transparent;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  margin-left: 1px;
+  width: 18px;
+  height: 18px;
+  background: url("../images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center, center;
+}
+/* ... */
+```
+
+Getting information from child-component:
+
+```js
+// StatusBar component
+/* Function to filter Tasks accourding their status active/completed */
+const handleFilterValue = (filter: string) => {
+  handleSelectedFilter(filter);
+};
+
+// page
+// Function to get filter value from Statusbar component
+const handleSelectedFilter = (filter: string) => {
+  setFilterValue(filter);
 };
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Getting the filter value from the child-component was needed to set the value of the useState-Hook in the parent element.
+This would allow the app to set up a filtered List which can be provided for the TodoList component.
 
 ### Continued development
 
@@ -90,8 +127,12 @@ This is a perfect challenge to learn about React/Next.js and Typescript especial
 - [Custom Styling Checkboxes: The Modern Way](https://dev.to/adbutterfield/custom-styling-checkboxes-the-modern-way-3o42) - Great article by **Adam Butterfield**
 - [Pure CSS Custom Checkbox Style](https://moderncss.dev/pure-css-custom-checkbox-style/) - Another Great article about checkbox styling by **Stephanie Eckles**.
 - [Grid Areas in Tailwindcss](https://savvywombat.com.au/tailwind-css/grid-areas) - Great plugin for named grid areas in Tailwindcss by **SavvyWombat**.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Coding a Todo List Using NextJS with TailwindCSS](https://www.youtube.com/watch?v=zffCSsHQx9g) - Great Video about a Todo-project made by **Codr Kai**.
+- [React For Beginners 29: Todo App Part 2 Preview Of The App](https://www.youtube.com/watch?v=Y_IiNLsQmD8&list=PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza&index=29) - Awesome Video series about React for Beginners made by **Code Stoic**. I learned a lot about React by watching his series from the beginning.
+- [React JS Typescript Drag and Drop](https://www.youtube.com/watch?v=dRLYO1-dhQU) - Awesome video about the use of react-beautiful-dnd made by **Nic Valdez** from **Darwin Tech**.
+- [React For Beginners 45: Sorting Items In A Todo List](https://www.youtube.com/watch?v=fu_PYQ0b-uQ) - Great Video by **Code Stoic**, which is part of the series mentioned before.
+- [#34 Filtering a List in React | working with React events | A Complete React Course](https://www.youtube.com/watch?v=weFOaIHlDpo) - Great Video by **procademy**, also part of a bigger series.
+- [The useState Hook as a Props In React with Typescript](https://www.youtube.com/watch?v=qot-mSwWTDI) - Nice intro in dealing with types as Props for components made by **proCodeZone**.
 
 ## Author
 
